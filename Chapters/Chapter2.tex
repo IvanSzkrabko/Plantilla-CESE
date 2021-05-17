@@ -5,198 +5,181 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-Todos los capítulos deben comenzar con un breve párrafo introductorio que indique cuál es el contenido que se encontrará al leerlo.  La redacción sobre el contenido de la memoria debe hacerse en presente y todo lo referido al proyecto en pasado, siempre de modo impersonal.
+En este capítulo se presentan las herramientas usadas para desarrollar el trabajo y un breve compendio de otros trabajos similares en la temática. Hacia el final, se encuentran los requerimientos y la planificación utilizada.
 
-\section{Estilo y convenciones}
-\label{sec:ejemplo}
+\section{Entorno de desarrollo}
+\subsection{Hololens2}
 
-\subsection{Uso de mayúscula inicial para los título de secciones}
-
-Si en el texto se hace alusión a diferentes partes del trabajo referirse a ellas como capítulo, sección o subsección según corresponda. Por ejemplo: ``En el capítulo \ref{Chapter1} se explica tal cosa'', o ``En la sección \ref{sec:ejemplo} se presenta lo que sea'', o ``En la subsección \ref{subsec:ejemplo} se discute otra cosa''.
-
-Cuando se quiere poner una lista tabulada, se hace así:
-
-\begin{itemize}
-	\item Este es el primer elemento de la lista.
-	\item Este es el segundo elemento de la lista.
-\end{itemize}
-
-Notar el uso de las mayúsculas y el punto al final de cada elemento.
-
-Si se desea poner una lista numerada el formato es este:
-
-\begin{enumerate}
-	\item Este es el primer elemento de la lista.
-	\item Este es el segundo elemento de la lista.
-\end{enumerate}
-
-Notar el uso de las mayúsculas y el punto al final de cada elemento.
-
-\subsection{Este es el título de una subsección}
-\label{subsec:ejemplo}
-
-Se recomienda no utilizar \textbf{texto en negritas} en ningún párrafo, ni tampoco texto \underline{subrayado}. En cambio sí se debe utilizar \textit{texto en itálicas} para palabras en un idioma extranjero, al menos la primera vez que aparecen en el texto. En el caso de palabras que estamos inventando se deben utilizar ``comillas'', así como también para citas textuales. Por ejemplo, un \textit{digital filter} es una especie de ``selector'' que permite separar ciertos componentes armónicos en particular.
-
-La escritura debe ser impersonal. Por ejemplo, no utilizar ``el diseño del firmware lo hice de acuerdo con tal principio'', sino ``el firmware fue diseñado utilizando tal principio''. 
-
-El trabajo es algo que al momento de escribir la memoria se supone que ya está concluido, entonces todo lo que se refiera a hacer el trabajo se narra en tiempo pasado, porque es algo que ya ocurrió. Por ejemplo, "se diseñó el firmware empleando la técnica de test driven development".
-
-En cambio, la memoria es algo que está vivo cada vez que el lector la lee. Por eso transcurre siempre en tiempo presente, como por ejemplo:
-
-``En el presente capítulo se da una visión global sobre las distintas pruebas realizadas y los resultados obtenidos. Se explica el modo en que fueron llevados a cabo los test unitarios y las pruebas del sistema''.
-
-Se recomienda no utilizar una sección de glosario sino colocar la descripción de las abreviaturas como parte del mismo cuerpo del texto. Por ejemplo, RTOS (\textit{Real Time Operating System}, Sistema Operativo de Tiempo Real) o en caso de considerarlo apropiado mediante notas a pie de página.
-
-Si se desea indicar alguna página web utilizar el siguiente formato de referencias bibliográficas, dónde las referencias se detallan en la sección de bibliografía de la memoria, utilizado el formato establecido por IEEE en \citep{IEEE:citation}. Por ejemplo, ``el presente trabajo se basa en la plataforma EDU-CIAA-NXP \citep{CIAA}, la cual...''.
-
-\subsection{Figuras} 
-
-Al insertar figuras en la memoria se deben considerar determinadas pautas. Para empezar, usar siempre tipografía claramente legible. Luego, tener claro que \textbf{es incorrecto} escribir por ejemplo esto: ``El diseño elegido es un cuadrado, como se ve en la siguiente figura:''
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=.45]{./Figures/cuadradoAzul.png}
-\end{figure}
-
-La forma correcta de utilizar una figura es con referencias cruzadas, por ejemplo: ``Se eligió utilizar un cuadrado azul para el logo, como puede observarse en la figura \ref{fig:cuadradoAzul}''.
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=.45]{./Figures/cuadradoAzul.png}
-	\caption{Ilustración del cuadrado azul que se eligió para el diseño del logo.}
-	\label{fig:cuadradoAzul}
-\end{figure}
-
-El texto de las figuras debe estar siempre en español, excepto que se decida reproducir una figura original tomada de alguna referencia. En ese caso la referencia de la cual se tomó la figura debe ser indicada en el epígrafe de la figura e incluida como una nota al pie, como se ilustra en la figura \ref{fig:palabraIngles}.
+El equipo que se utilizo para la interfaz de realidad aumentada es el Microsoft Hololens 2. Podemos ver una foto del equipo en la figura \ref{fig:hololens2}:
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.3]{./Figures/word.jpeg}
-	\caption{Imagen tomada de la página oficial del procesador\protect\footnotemark.}
-	\label{fig:palabraIngles}
+	\includegraphics[scale=.5]{./Figures/hololens2.jpeg}
+	\caption{Hololens2\protect\footnotemark.}
+	\label{fig:hololens2}
 \end{figure}
 
-\footnotetext{Imagen tomada de \url{https://goo.gl/images/i7C70w}}
-
-La figura y el epígrafe deben conformar una unidad cuyo significado principal pueda ser comprendido por el lector sin necesidad de leer el cuerpo central de la memoria. Para eso es necesario que el epígrafe sea todo lo detallado que corresponda y si en la figura se utilizan abreviaturas entonces aclarar su significado en el epígrafe o en la misma figura.
+\footnotetext{Imagen tomada de \url{https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/}}
 
 
+Fue lanzado al mercado para uso corporativo, Microsoft apuesta a que la tecnología sea usada con fines productivos en distintas industrias. Es un equipo de ultima generación que funciona con un sistema operativo Windows 10 core.  La tabla \ref{tab:holotab}, muestra sus especificaciones técnicas:
 
-\begin{figure}[ht]
+\begin{table}[htpb]
 	\centering
-	\includegraphics[scale=.37]{./Figures/questionMark.png}
-	\caption{¿Por qué de pronto aparece esta figura?}
-	\label{fig:questionMark}
-\end{figure}
-
-Nunca colocar una figura en el documento antes de hacer la primera referencia a ella, como se ilustra con la figura \ref{fig:questionMark}, porque sino el lector no comprenderá por qué de pronto aparece la figura en el documento, lo que distraerá su atención.
-
-Otra posibilidad es utilizar el entorno \textit{subfigure} para incluir más de una figura, como se puede ver en la figura \ref{fig:three graphs}. Notar que se pueden referenciar también las figuras internas individualmente de esta manera: \ref{fig:1de3}, \ref{fig:2de3} y \ref{fig:3de3}.
- 
-\begin{figure}[!htpb]
-     \centering
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Un caption.}
-         \label{fig:1de3}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Otro.}
-         \label{fig:2de3}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Y otro más.}
-         \label{fig:3de3}
-     \end{subfigure}
-        \caption{Tres gráficos simples}
-        \label{fig:three graphs}
-\end{figure}
-
-El código para generar las imágenes se encuentra disponible para su reutilización en el archivo \file{Chapter2.tex}.
-
-\subsection{Tablas}
-
-Para las tablas utilizar el mismo formato que para las figuras, sólo que el epígrafe se debe colocar arriba de la tabla, como se ilustra en la tabla \ref{tab:peces}. Observar que sólo algunas filas van con líneas visibles y notar el uso de las negritas para los encabezados.  La referencia se logra utilizando el comando \verb|\ref{<label>}| donde label debe estar definida dentro del entorno de la tabla.
-
-\begin{verbatim}
-\begin{table}[h]
-	\centering
-	\caption[caption corto]{caption largo más descriptivo}
+	\caption[Hardware Hololens 2]{Especificaciones técnicas}
+	\scalebox{0.9}{
 	\begin{tabular}{l c c}    
 		\toprule
-		\textbf{Especie}     & \textbf{Tamaño} & \textbf{Valor}\\
+		\textbf{Hardware} 	 & \textbf{Descripción}  \\
 		\midrule
-		Amphiprion Ocellaris & 10 cm           & \$ 6.000 \\		
-		Hepatus Blue Tang    & 15 cm           & \$ 7.000 \\
-		Zebrasoma Xanthurus  & 12 cm           & \$ 6.800 \\
+		Procesador				&  Qualcomm Snapdragon 850 \\		
+		Memoria	 				&  4 GB DRAM \\
+		Almacenamiento	 		&   64 GB \\
+		Cámara	 				&   1080p \\
+		Peso 	 				&   566 gr \\
+		CPU holografica			&   Segunda generación\\
+		Resolución				&   2k 3:2\\
+		Unidad de medida inercial			&   Acelerómetro, giroscopio y magnetómetro\\
+		Seguimiento de cabeza	&   4 cámaras de luz visible\\
+		Seguimiento de ojos	&   2 cámaras de infrarrojas\\
 		\bottomrule
 		\hline
-	\end{tabular}
-	\label{tab:peces}
+	\end{tabular}}
+	\label{tab:holotab}
 \end{table}
-\end{verbatim}
 
+Lo innovador de su diseño es que utiliza micro espejos para proyectar 3 haces de luz láser de color rojo, verde y azul. Con un micro espejo por cada ojo oscilando a 12.000 veces por segundo, compone la imagen horizontal. Con un segundo micro espejo, oscilando a 120 veces por segundo forma la componente vertical. Luego,
+este haz de luz es proyectado hacia nuestra retina, utilizando el visor del Hololens 2 que actúa como una guía de onda. En la figura \ref{fig:Lasers} podemos ver una ejemplificación del funcionamiento interno:
 
-\begin{table}[h]
+\begin{figure}[htpb]
 	\centering
-	\caption[caption corto]{caption largo más descriptivo}
-	\begin{tabular}{l c c}    
-		\toprule
-		\textbf{Especie} 	 & \textbf{Tamaño} 		& \textbf{Valor}  \\
-		\midrule
-		Amphiprion Ocellaris & 10 cm 				& \$ 6.000 \\		
-		Hepatus Blue Tang	 & 15 cm				& \$ 7.000 \\
-		Zebrasoma Xanthurus	 & 12 cm				& \$ 6.800 \\
-		\bottomrule
-		\hline
-	\end{tabular}
-	\label{tab:peces}
-\end{table}
+	\includegraphics[width=\textwidth]{./Figures/Lasers.png}
+	\caption{Micro espejos\protect\footnotemark.}
+	\label{fig:Lasers}
+\end{figure}
 
-En cada capítulo se debe reiniciar el número de conteo de las figuras y las tablas, por ejemplo, figura 2.1 o tabla 2.1, pero no se debe reiniciar el conteo en cada sección. Por suerte la plantilla se encarga de esto por nosotros.
+\footnotetext{Imagen tomada de \url{https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/}}
 
-\subsection{Ecuaciones}
-\label{sec:Ecuaciones}
 
-Al insertar ecuaciones en la memoria dentro de un entorno \textit{equation}, éstas se numeran en forma automática  y se pueden referir al igual que como se hace con las figuras y tablas, por ejemplo ver la ecuación \ref{eq:metric}.
+\subsection{MRTK}
 
-\begin{equation}
-	\label{eq:metric}
-	ds^2 = c^2 dt^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + \sigma^2\left[ d\theta^2 + \sin^2\theta d\phi^2 \right] \right)
-\end{equation}
-                                                        
-Es importante tener presente que si bien las ecuaciones pueden ser referidas por su número, también es correcto utilizar los dos puntos, como por ejemplo ``la expresión matemática que describe este comportamiento es la siguiente:''
+MRTK(Mixed Reality Toolkit) para Unity es un kit de desarrollo multiplataforma de código abierto para aplicaciones de realidad mixta. Proporciona un sistema de entrada multiplataforma, componentes fundamentales y bloques de construcción comunes para interacciones espaciales. Tiene como objetivo acelerar el desarrollo de aplicaciones para Microsoft HoloLens, los visores inmersivos (VR) de Windows Mixed Reality y la plataforma OpenVR. El proyecto busca reducir las barreras de entrada, crear aplicaciones de realidad mixta y contribuir a la comunidad. El framework puede desglosarse conceptualmente como se muestra en la \ref{fig:mrtk}:
 
-\begin{equation}
-	\label{eq:schrodinger}
-	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = -i\hbar \frac{\partial\Psi}{\partial t}
-\end{equation}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.1]{./Figures/mrtk.png}
+	\caption{Componentes del framework \protect\footnotemark.}
+	\label{fig:mrtk}
+\end{figure}
 
-Para generar la ecuación \ref{eq:metric} se utilizó el siguiente código:
+\footnotetext{Imagen tomada de \url{https://docs.microsoft.com/en-us/windows/mixed-reality/}}
 
-\begin{verbatim}
-\begin{equation}
-	\label{eq:metric}
-	ds^2 = c^2 dt^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + 
-	\sigma^2\left[ d\theta^2 + 
-	\sin^2\theta d\phi^2 \right] \right)
-\end{equation}
-\end{verbatim}
+Sus componentes principales son:
+\begin{itemize}
+\item Hands: clase básica de soporte con servicios para seguimiento de las manos.
+\item ObjectMeshObserver: procesamiento del ambiente usando el modelado 3D.
+\item WindowsMixedReality:compatibilidad con dispositivos Windows Mixed Reality, incluidos Microsoft HoloLens y auriculares inmersivos.
+\item Profiles: perfiles predeterminados para los sistemas y servicios de Microsoft Mixed Reality Toolkit.
+\item SceneSystem: sistema que proporciona compatibilidad con aplicaciones de múltiples escenas..
+\item StandardAssets: renderizado estándar, materiales básicos y otros activos para experiencias de realidad mixta
+\end{itemize}
 
-Y para la ecuación \ref{eq:schrodinger}:
+Ademas del MRTK, se utilizan programas de diseño como el Fusion360 para crear objetos 3D. Se utiliza el Visual Studio como IDE de desarrollo y como herramienta de compilación. Y finalmente Unity, como herramienta de diseño visual de la aplicación. En la figura \ref{fig:workflow}, podemos ver un diagrama del entorno completo:
 
-\begin{verbatim}
-\begin{equation}
-	\label{eq:schrodinger}
-	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = 
-	-i\hbar \frac{\partial\Psi}{\partial t}
-\end{equation}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=\textwidth]{./Figures/workflow.png}
+	\caption{Entorno de desarrollo\protect\footnotemark.}
+	\label{fig:workflow}
+\end{figure}
 
-\end{verbatim}
+\footnotetext{Imagen tomada de \url{https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/}}
+
+\subsection{OPC framework}
+
+Las especificaciones de OPC Classic se basan en la tecnología de Microsoft Windows, utilizando COM / DCOM (Distributed Component Object Model) para la comunicación entre componentes de software en una red distribuida cliente-servidor. La especificación original es OPC-DA (Data Access), que define una interfaz entre las aplicaciones cliente y servidor para intercambiar datos de proceso y fabricación. Antes de OPC-DA, los productos de distintos proveedores (PLC, HMI) requerían que cualquier dispositivo o aplicación que se conectara a ellos, tuviera un "controlador personalizado" que comunicara el dispositivo con equipos de terceros. En la figura \ref{fig:OPCAQ} se muestra una arquitectura típica de control previa a la existencia del standard OPC:
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.40]{./Figures/opc_1.png}
+	\caption{Arquitectura OPC\protect\footnotemark.}
+	\label{fig:OPCAQ}
+\end{figure}
+
+\footnotetext{Imagen tomada de \url{https://technosoftware.com/opc-daaehda-client-net}}
+
+Hubo muchos problemas asociados con las comunicaciones basadas en controladores personalizados. La tecnología patentada de alto costo que forzaba a los usuarios a mantener un proveedor en particular. Dificultades para configurar y  mantener actualizado los drivers debido al lanzamiento de nuevos dispositivos y aplicaciones. OPC-DA hizo posible la conexión a cualquier fuente de datos en tiempo real sin un driver escrito específicamente para el par fuente de datos / receptor de datos. Por lo tanto, las lecturas y escrituras se pueden realizar sin que el receptor de datos tenga que conocer el protocolo nativo de la fuente de datos o la estructura de datos interna.\\ 
+
+La especificación describe los objetos y sus interfaces, las cuales son implementadas por los servidores OPC. Aunque OPC está diseñado principalmente para acceder a datos desde un servidor en red, las interfaces se pueden utilizar en muchos lugares dentro de una aplicación. En el nivel más bajo, pueden obtener datos sin procesar de los dispositivos físicos y enviarlos a un SCADA o DCS, o desde el sistema SCADA o DCS a la aplicación. La arquitectura y el diseño permiten que una aplicación cliente acceda a datos de muchos servidores OPC proporcionados por distintos proveedores. En la figura \ref{fig:OPCbloques} se muestra un diagrama en bloques para ejemplificar lo explicado:
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.4]{./Figures/opc_2.png}
+	\caption{Diagrama en bloques\protect\footnotemark.}
+	\label{fig:OPCbloques}
+\end{figure}
+
+\footnotetext{Imagen tomada de \url{https://opcfoundation.org}}
+
+A alto nivel, un servidor OPC se compone de varios objetos: el servidor, el grupo y el elemento. El objeto del servidor OPC mantiene información sobre el servidor y sirve como contenedor para los objetos del grupo. El objeto del grupo mantiene información sobre sí mismo y proporciona el mecanismo para contener y organizar lógicamente los elementos OPC. Un cliente se comunica con el servidor a través de las interfaces para cada objeto OPC, como se ve en la figura \ref{fig:OPCapi}:
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.4]{./Figures/opc_3.png}
+	\caption{Diagrama en bloques\protect\footnotemark.}
+	\label{fig:OPCapi}
+\end{figure}
+
+\footnotetext{Imagen tomada de \url{https://opcfoundation.org}}
+
+\begin{itemize}
+\item IOPCServer:ésta es la interfaz principal de un servidor OPC, permite realizar las consultar a los grupos de elementos OPC.
+\item IUnknown: consiste en un puntero a una tabla que permite descubrir dinámicamente si un objeto admite una interfaz en particular.
+\item IOPCCommon:Proporciona la capacidad de configurar y consultar el LocaleID para la sesión cliente/servidor en particular. El LocaleID contempla el formato de números, fechas, moneda, etc. puede depender de la configuración regional.
+\item IOPCBrowse: proporciona métodos mejorados para navegar por el espacio de direcciones del servidor y para
+obtener propiedades de los elementos OPC.
+\item IConnectionPointContainer: permite disparar eventos llamando a un método de la interfaz de un objeto COM del lado del cliente implementado por el mismo cliente.
+\item IOPCItemIO: en términos de rendimiento esta interfaz se comportará como si se creara un grupo, se agregaran los elementos OPC, se realizara una sola lectura o escritura y luego se eliminara el grupo. Por lo tanto no es la interfaz recomendada para la mayoría de las aplicaciones.
+\end{itemize}
+
+Los grupos OPC proporcionan una forma para que los clientes organicen los datos. Por ejemplo, el grupo puede representar elementos en una pantalla de operación o variables de un lazo PID. Los datos se pueden leer y escribir. Los elementos OPC representan conexiones a fuentes de datos dentro del servidor. Un elemento OPC, desde la perspectiva de la interfaz, no es accesible como objeto por un cliente OPC. Por lo tanto, no hay una interfaz externa definida para un elemento OPC. Todo el acceso a los elementos OPC se realiza a través de un objeto de grupo que ``contiene'' los elementos. Un grupo también proporciona una forma para que el cliente se ``suscriba'' a la lista de elementos para que pueda ser notificado cuando cambien. Este ratio de actualización es un parámetro configurable del servidor.
+
+
+\subsection{Requerimientos}
+
+A continuación se listan los requerimientos en base a las distintas etapas del trabajo:
+
+\begin{enumerate}
+\item Requerimientos asociados al desarrollo de la interfaz visual:
+	\begin{enumerate}
+	\item La interfaz debe ser intuitiva y simple.
+	\item El idioma definido es Español.
+	\end{enumerate}
+\item Requerimientos asociados al desarrollo de lógica en .NET:
+	\begin{enumerate}
+	\item La aplicación debe ser fluida y responder sin demoras apreciables por el operador, estableciéndose así el límite máximo de espera en 2 segundos.
+	\item La aplicación debe poder hacer operaciones GET y POST sobre un servidor web, ya sea local o en la nube.
+	\end{enumerate}
+\item Requerimientos asociados a la API rest:
+	\begin{enumerate}
+	\item La API no será de acceso público, solo podrá ser consultada por las aplicaciones que poseen un \textit{token} de seguridad.
+	\end{enumerate}
+\item Requerimientos asociados a la interfaz de comunicación con el sistema de control:	
+	\begin{enumerate}	
+	\item La solución debe poder consultar una serie de datos específicos a elección, de los elementos que pertenecen al sistema de control.
+	\item La comunicación debe cumplir con el \textit{standard} OPC.
+	\end{enumerate}
+\end{enumerate}
+
+\subsection{Planificación}
+
+El trabajo fue dividido en tareas y se estimaron los tiempos que debían emplearse para cada una de ellas. A su vez, se analizaron qué tareas debían realizarse primero y cuáles eran sus dependencias. Al momento de organizar las tareas se consideraron 15 horas semanales efectivas de trabajo, obteniendo como resultado la planificación de la figura \ref{figure:gantt}:
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=14cm]{./Figures/gantt_1.png}
+	\caption{Diagrama de Gantt\protect\footnotemark.}
+	\label{figure:gantt}
+\end{figure}
+
+Como se estimo al inicio del trabajo la comunicación OPC fue la que mas tiempo empleo, incluso se extendió 1 mes mas de lo planeado. 
