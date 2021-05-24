@@ -15,7 +15,7 @@ El equipo que se utilizo para la interfaz de realidad aumentada es el Microsoft 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/hololens2.jpeg}
-	\caption{Hololens2\protect\footnotemark.}
+	\caption{hololens2\protect\footnotemark.}
 	\label{fig:hololens2}
 \end{figure}
 
@@ -48,13 +48,12 @@ Fue lanzado al mercado para uso corporativo, Microsoft apuesta a que la tecnolog
 	\label{tab:holotab}
 \end{table}
 
-Lo innovador de su diseño es que utiliza micro espejos para proyectar 3 haces de luz láser de color rojo, verde y azul. Con un micro espejo por cada ojo oscilando a 12.000 veces por segundo, compone la imagen horizontal. Con un segundo micro espejo, oscilando a 120 veces por segundo forma la componente vertical. Luego,
-este haz de luz es proyectado hacia nuestra retina, utilizando el visor del Hololens 2 que actúa como una guía de onda. En la figura \ref{fig:Lasers} podemos ver una ejemplificación del funcionamiento interno:
+Lo innovador de su diseño es que utiliza micro espejos para proyectar 3 haces de luz láser de color rojo, verde y azul. Con un micro espejo por cada ojo oscilando a 12.000 veces por segundo, compone la imagen horizontal. Con un segundo micro espejo, oscilando a 120 veces por segundo forma la componente vertical. Luego,este haz de luz es proyectado hacia nuestra retina, utilizando el visor del Hololens 2 que actúa como una guía de onda. En la figura \ref{fig:Lasers} podemos ver una ejemplificación del funcionamiento interno:
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=\textwidth]{./Figures/Lasers.png}
-	\caption{Micro espejos\protect\footnotemark.}
+	\caption{micro espejos\protect\footnotemark.}
 	\label{fig:Lasers}
 \end{figure}
 
@@ -63,12 +62,12 @@ este haz de luz es proyectado hacia nuestra retina, utilizando el visor del Holo
 
 \subsection{MRTK}
 
-MRTK(Mixed Reality Toolkit) para Unity es un kit de desarrollo multiplataforma de código abierto para aplicaciones de realidad mixta. Proporciona un sistema de entrada multiplataforma, componentes fundamentales y bloques de construcción comunes para interacciones espaciales. Tiene como objetivo acelerar el desarrollo de aplicaciones para Microsoft HoloLens, los visores inmersivos (VR) de Windows Mixed Reality y la plataforma OpenVR. El proyecto busca reducir las barreras de entrada, crear aplicaciones de realidad mixta y contribuir a la comunidad. El framework puede desglosarse conceptualmente como se muestra en la \ref{fig:mrtk}:
+MRTK(\textit{Mixed Reality Toolkit}) para Unity es un kit de desarrollo multiplataforma de código abierto para aplicaciones de realidad mixta. Proporciona un sistema de entrada multiplataforma, componentes fundamentales y bloques de construcción comunes para interacciones espaciales. Tiene como objetivo acelerar el desarrollo de aplicaciones para Microsoft HoloLens, los visores inmersivos de Windows Mixed Reality y la plataforma OpenVR. El proyecto busca reducir las barreras de entrada, crear aplicaciones de realidad mixta y contribuir a la comunidad. El \textit{framework} puede desglosarse conceptualmente como se muestra en la \ref{fig:mrtk}:
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.1]{./Figures/mrtk.png}
-	\caption{Componentes del framework \protect\footnotemark.}
+	\caption{componentes del \textit{framework} \protect\footnotemark.}
 	\label{fig:mrtk}
 \end{figure}
 
@@ -76,12 +75,12 @@ MRTK(Mixed Reality Toolkit) para Unity es un kit de desarrollo multiplataforma d
 
 Sus componentes principales son:
 \begin{itemize}
-\item Hands: clase básica de soporte con servicios para seguimiento de las manos.
-\item ObjectMeshObserver: procesamiento del ambiente usando el modelado 3D.
-\item WindowsMixedReality:compatibilidad con dispositivos Windows Mixed Reality, incluidos Microsoft HoloLens y auriculares inmersivos.
-\item Profiles: perfiles predeterminados para los sistemas y servicios de Microsoft Mixed Reality Toolkit.
-\item SceneSystem: sistema que proporciona compatibilidad con aplicaciones de múltiples escenas..
-\item StandardAssets: renderizado estándar, materiales básicos y otros activos para experiencias de realidad mixta
+\item \textit{Hands}: clase básica de soporte con servicios para seguimiento de las manos.
+\item \textit{ObjectMeshObserver}: procesamiento del ambiente usando el modelado 3D.
+\item \textit{WindowsMixedReality}:compatibilidad con dispositivos \textit{Windows Mixed Reality}, incluidos Microsoft HoloLens y auriculares inmersivos.
+\item \textit{Profiles}: perfiles predeterminados para los sistemas y servicios de \textit{Microsoft Mixed Reality Toolkit}.
+\item \textit{SceneSystem}: sistema que proporciona compatibilidad con aplicaciones de múltiples escenas..
+\item \textit{StandardAssets}: renderizado estándar, materiales básicos y otros activos para experiencias de realidad mixta
 \end{itemize}
 
 Ademas del MRTK, se utilizan programas de diseño como el Fusion360 para crear objetos 3D. Se utiliza el Visual Studio como IDE de desarrollo y como herramienta de compilación. Y finalmente Unity, como herramienta de diseño visual de la aplicación. En la figura \ref{fig:workflow}, podemos ver un diagrama del entorno completo:
@@ -89,33 +88,33 @@ Ademas del MRTK, se utilizan programas de diseño como el Fusion360 para crear o
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=\textwidth]{./Figures/workflow.png}
-	\caption{Entorno de desarrollo\protect\footnotemark.}
+	\caption{entorno de desarrollo\protect\footnotemark.}
 	\label{fig:workflow}
 \end{figure}
 
 \footnotetext{Imagen tomada de \url{https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/}}
 
-\subsection{OPC framework}
+\subsection{OPC \textit{framework}}
 
-Las especificaciones de OPC Classic se basan en la tecnología de Microsoft Windows, utilizando COM / DCOM (Distributed Component Object Model) para la comunicación entre componentes de software en una red distribuida cliente-servidor. La especificación original es OPC-DA (Data Access), que define una interfaz entre las aplicaciones cliente y servidor para intercambiar datos de proceso y fabricación. Antes de OPC-DA, los productos de distintos proveedores (PLC, HMI) requerían que cualquier dispositivo o aplicación que se conectara a ellos, tuviera un "controlador personalizado" que comunicara el dispositivo con equipos de terceros. En la figura \ref{fig:OPCAQ} se muestra una arquitectura típica de control previa a la existencia del standard OPC:
+Las especificaciones de OPC \textit{Classic} se basan en la tecnología de Microsoft Windows, utilizando COM / DCOM (\textit{Distributed Component Object Model}) para la comunicación entre componentes de software en una red distribuida cliente-servidor. La especificación original es OPC-DA (\textit{Data Access}), que define una interfaz entre las aplicaciones cliente y servidor para intercambiar datos de proceso y fabricación. Antes de OPC-DA, los productos de distintos proveedores (PLC, HMI) requerían que cualquier dispositivo o aplicación que se conectara a ellos, tuviera un ``controlador personalizado'' que comunicara el dispositivo con equipos de terceros. En la figura \ref{fig:OPCAQ} se muestra una arquitectura típica de control previa a la existencia del \textit{standard} OPC:
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.40]{./Figures/opc_1.png}
-	\caption{Arquitectura OPC\protect\footnotemark.}
+	\caption{arquitectura OPC\protect\footnotemark.}
 	\label{fig:OPCAQ}
 \end{figure}
 
 \footnotetext{Imagen tomada de \url{https://technosoftware.com/opc-daaehda-client-net}}
 
-Hubo muchos problemas asociados con las comunicaciones basadas en controladores personalizados. La tecnología patentada de alto costo que forzaba a los usuarios a mantener un proveedor en particular. Dificultades para configurar y  mantener actualizado los drivers debido al lanzamiento de nuevos dispositivos y aplicaciones. OPC-DA hizo posible la conexión a cualquier fuente de datos en tiempo real sin un driver escrito específicamente para el par fuente de datos / receptor de datos. Por lo tanto, las lecturas y escrituras se pueden realizar sin que el receptor de datos tenga que conocer el protocolo nativo de la fuente de datos o la estructura de datos interna.\\ 
+Hubo muchos problemas asociados con las comunicaciones basadas en controladores personalizados. La tecnología patentada de alto costo que forzaba a los usuarios a mantener un proveedor en particular. Dificultades para configurar y  mantener actualizado los \textit{drivers} debido al lanzamiento de nuevos dispositivos y aplicaciones. OPC-DA hizo posible la conexión a cualquier fuente de datos en tiempo real sin un driver escrito específicamente para el par fuente de datos / receptor de datos. Por lo tanto, las lecturas y escrituras se pueden realizar sin que el receptor de datos tenga que conocer el protocolo nativo de la fuente de datos o la estructura de datos interna.\\ 
 
 La especificación describe los objetos y sus interfaces, las cuales son implementadas por los servidores OPC. Aunque OPC está diseñado principalmente para acceder a datos desde un servidor en red, las interfaces se pueden utilizar en muchos lugares dentro de una aplicación. En el nivel más bajo, pueden obtener datos sin procesar de los dispositivos físicos y enviarlos a un SCADA o DCS, o desde el sistema SCADA o DCS a la aplicación. La arquitectura y el diseño permiten que una aplicación cliente acceda a datos de muchos servidores OPC proporcionados por distintos proveedores. En la figura \ref{fig:OPCbloques} se muestra un diagrama en bloques para ejemplificar lo explicado:
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.4]{./Figures/opc_2.png}
-	\caption{Diagrama en bloques\protect\footnotemark.}
+	\caption{diagrama en bloques\protect\footnotemark.}
 	\label{fig:OPCbloques}
 \end{figure}
 
@@ -126,7 +125,7 @@ A alto nivel, un servidor OPC se compone de varios objetos: el servidor, el grup
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=0.4]{./Figures/opc_3.png}
-	\caption{Diagrama en bloques\protect\footnotemark.}
+	\caption{diagrama en bloques\protect\footnotemark.}
 	\label{fig:OPCapi}
 \end{figure}
 
@@ -178,7 +177,7 @@ El trabajo fue dividido en tareas y se estimaron los tiempos que debían emplear
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=14cm]{./Figures/gantt_1.png}
-	\caption{Diagrama de Gantt\protect\footnotemark.}
+	\caption{diagrama de Gantt\protect\footnotemark.}
 	\label{figure:gantt}
 \end{figure}
 
