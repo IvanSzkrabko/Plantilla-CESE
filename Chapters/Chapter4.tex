@@ -11,7 +11,7 @@
 \section{Evaluación de las interfaces}
 \label{sec:pruebasHW}
 
-A continuación podemos ver algunas mediciones de tiempos de respuesta de las interfaces principales. Para la medición Hololens - API, se utilizo la opción \textit{debug} del Hololens para identificar el \textit{timestamp} del comando emitido al clickear ``Siguiente'' en la interfaz. Ademas se utilizo la API para loguear el \textit{timestamp} en el que se recibe la consulta web. Para la medición API - server OPC, también se utilizo la API para loguear el \textit{timestamp} en el que se recibe la consulta web. Y se utilizo el servicio OPC para loguear el momento en el que la variable OPC es actualizada. Para un promedio de 10 mediciones consecutivas, los resultados pueden verse en la tabla \ref{tab:interfaces}:
+A continuación podemos ver algunas mediciones de tiempos de respuesta de las interfaces principales. Para la medición Hololens 2 - API, se utilizó la opción \textit{debug} del Hololens 2 para identificar el \textit{timestamp} del comando emitido al clickear ``Siguiente'' en la interfaz. Además se utilizó la API para loguear el \textit{timestamp} en el que se recibe la consulta web. Para la medición API - server OPC, también se utilizó la API para loguear el \textit{timestamp} en el que se recibe la consulta web. Y se utilizó el servicio OPC para loguear el momento en el que la variable OPC es actualizada. Para un promedio de 10 mediciones consecutivas, los resultados pueden verse en la tabla \ref{tab:interfaces}:
 
 \begin{table}[htpb]
 	\centering
@@ -21,7 +21,7 @@ A continuación podemos ver algunas mediciones de tiempos de respuesta de las in
 		\toprule
 		\textbf{Interfaz} 	 & \textbf{Tiempo}  \\
 		\midrule
-		Hololens - API				&  >340ms \\		
+		Hololens 2 - API				&  >340ms \\		
 		API - server OPC	 		&  >320ms \\
 		\bottomrule
 		\hline
@@ -29,4 +29,4 @@ A continuación podemos ver algunas mediciones de tiempos de respuesta de las in
 	\label{tab:interfaces}
 \end{table}
 
-Dado que la aplicación se comunica a través de mensajes del tipo JSON y la cantidad de información enviada es reducida, los tiempos de respuesta son realmente bajos y no representan un problema para la implementación. Podemos ver que el tiempo de respuesta de toda la cadena de comunicación, es inferior al segundo. Este trabajo se realizo utilizando servidores \textit{cloud} pero bien podrían ser locales. Llegado el caso, si los tiempos representan una perdida de fluidez en la aplicación, la migración no requeriría mayores esfuerzos. 
+Dado que la aplicación se comunica a través de mensajes del tipo JSON y la cantidad de información enviada es reducida, los tiempos de respuesta son realmente bajos y no representan un problema para la implementación. Podemos ver que el tiempo de respuesta de toda la cadena de comunicación, es inferior al segundo. Este trabajo se realizó utilizando servidores \textit{cloud} pero bien podrían ser locales. Llegado el caso, si los tiempos representan una pérdida de fluidez en la aplicación, la migración no requeriría mayores esfuerzos. 

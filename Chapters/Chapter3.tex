@@ -45,88 +45,88 @@
 \section{Análisis del software}
 
 \subsection{Arquitectura del sistema}
-La solución esta integrada por 6 componentes principales. La interfaz visual, diseñada en Unity3D, a través de la cual el usuario interactúa con la aplicación. El backend de esta interfaz, desarrollado en .NET utilizando CSharp como lenguaje de programación. La APIrest, a través de la cual la aplicación embebida en el Hololens2 se comunica con el servidor web. La base de datos, que es actualizada a través de la APIrest. El servicio OPC, desde el cual se enviarán los datos pertinentes al sistema de control, a través del \textit{standard} industrial OPC. Y finalmente el sistema de control, representado por un controlador simulado. En la Figura \ref{fig:Diag_bloques} se puede observar el diagrama en bloques:
+La solución está integrada por 6 componentes principales. La interfaz visual, diseñada en Unity3D, a través de la cual el usuario interactúa con la aplicación. El backend de ésta interfaz, desarrollado en .NET utilizando CSharp como lenguaje de programación. La APIrest, a través de la cual la aplicación embebida en el Hololens 2 se comunica con el servidor web. La base de datos, que es actualizada a través de la APIrest. El servicio OPC, desde el cual se enviarán los datos pertinentes al sistema de control, a través del \textit{standard} industrial OPC. Y finalmente el sistema de control, representado por un controlador simulado. En la Figura \ref{fig:Diag_bloques} se puede observar el diagrama en bloques.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/Diag_bloques.jpg}
-	\caption{diagrama en bloques\protect\footnotemark.}
+	\caption{Diagrama en bloques del sistema\protect\footnotemark.}
 	\label{fig:Diag_bloques}
 \end{figure}
 
 \subsection{Interfaz de realidad aumentada}
 \subsubsection{Aplicación}
 
-La aplicación se encarga de ayudar a los operadores durante la fabricación por lotes de un producto determinado. Durante los procedimientos \textit{batch} se utilizan el mismo conjunto de maquinas para la fabricación de distintos productos. Por lo tanto, las tareas de los operadores varían en las distintas partes del proceso dependiendo del producto que se este fabricando. Una etapa clave en la fabricación del producto, es el agregado de aditivos en la mezcla. La aplicación desarrollada se encarga de evitar que el operador falle a la hora de seleccionar y dosificar el aditivo requerido. La aplicación comienza con la siguiente imagen \ref{fig:i2}:
+La aplicación se encarga de ayudar a los operadores durante la fabricación por lotes de un producto determinado. Durante los procedimientos \textit{batch} se utilizan el mismo conjunto de máquinas para la fabricación de distintos productos. Por lo tanto, las tareas de los operadores varían en las distintas partes del proceso dependiendo del producto que se esté fabricando. Una etapa clave en la fabricación del producto, es el agregado de aditivos en la mezcla. La aplicación desarrollada se encarga de evitar que el operador falle a la hora de seleccionar y dosificar el aditivo requerido. La aplicación comienza con la siguiente imagen \ref{fig:i2}.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/i2.PNG}
-	\caption{pantalla inicial\protect\footnotemark.}
+	\caption{Pantalla inicial\protect\footnotemark.}
 	\label{fig:i2}
 \end{figure}
 
-En este punto se aguarda la lectura del codigo QR correspondiente a la receta a producir. Las recetas son el conjunto de parámetros que involucran un lote de producción. En ellas podemos encontrar el listado de aditivos, la cantidades requeridas, los códigos de los distintos productos, tiempos de mezclado y demás parámetros necesarios para la producción. Si el operador lee un código de receta para el cual, el sistema de control no fue configurado a producir en ese momento, se indicara un error como muestra la siguiente figura \ref{fig:i3}:
+En éste punto se aguarda la lectura del codigo QR correspondiente a la receta a producir. Las recetas son el conjunto de parámetros que involucran un lote de producción. En ellas podemos encontrar el listado de aditivos, la cantidades requeridas, los códigos de los distintos productos, tiempos de mezclado y demás parámetros necesarios para la producción. Si el operador lee un código de receta para el cual, el sistema de control no fue configurado a producir en ese momento, se indicará un error como muestra la siguiente figura \ref{fig:i3}.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.4]{./Figures/i3.PNG}
-	\caption{código erróneo\protect\footnotemark.}
+	\caption{Código erróneo\protect\footnotemark.}
 	\label{fig:i3}
 \end{figure}
 
-Para poder avanzar, es necesario que se lea el código de la receta correcta. Como podemos ver a continuación en la imagen \ref{fig:i4}:
+Para poder avanzar, es necesario que se lea el código de la receta correcta. Como podemos ver a continuación en la imagen \ref{fig:i4}.
 \vspace{60px}
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/i4.PNG}
-	\caption{código correcto\protect\footnotemark.}
+	\caption{Código correcto\protect\footnotemark.}
 	\label{fig:i4}
 \end{figure}
 
-En este punto el operador acepta la receta y la interfaz mostrara la imagen \ref{fig:i6}:
+En éste punto el operador acepta la receta y la interfaz mostrará la imagen \ref{fig:i6}.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/i6.PNG}
-	\caption{inicio de receta\protect\footnotemark.}
+	\caption{Inicio de receta\protect\footnotemark.}
 	\label{fig:i6}
 \end{figure}
 
-En el margen derecho podemos ver 3 círculos azules, los cuales representan 3 tareas del operador a lo largo de la receta de producción. En la parte superior del listado de tareas podemos leer el producto que se fabricara en esta receta. En el lado izquierdo superior podemos ver una leyenda que ira actualizándose para guiar al operador. En la parte inferior encontramos 4 botones con las siguientes funcionalidades:
+En el margen derecho podemos ver 3 círculos azules, los cuales representan 3 tareas del operador a lo largo de la receta de producción. En la parte superior del listado de tareas podemos leer el producto que se fabricará en ésta receta. En el lado izquierdo superior podemos ver una leyenda que irá actualizándose para guiar al operador. En la parte inferior encontramos 4 botones con las siguientes funcionalidades.
 
 \begin{itemize}
-\item Ocultar: permite simplificar la vista holográfica, reduciendo la información proyectada en el hololens.
+\item Ocultar: permite simplificar la vista holográfica, reduciendo la información proyectada en el Hololens 2.
 \item Mostrar: restablece la información holográfica oculta.
-\item Datos: restablece la información correspondiente a la lecrestablece la información holográfica oculta.tura de codigos QR. 
-\item Siguiente: se utiliza para avanzar a la siguiente etapa drestablece la información holográfica oculta.e producción. 
+\item Datos: muestra los datos del código QR leído.
+\item Siguiente: se utiliza para avanzar a la siguiente etapa.
 \end{itemize}
 
-Según lo indicado en pantalla el operador deberá pulsar ``Siguiente'' para iniciar el procedimiento como se muestra en la imagen. En ese momento la instrucción se modificara, solicitándole que vierta en el tanque de producción el producto A. Como podemos ver en la imagen \ref{fig:i7}:
+Según lo indicado en pantalla el operador deberá pulsar ``Siguiente'' para iniciar el procedimiento como se muestra en la imagen. En ese momento la instrucción se modificara, solicitándole que vierta en el tanque de producción el producto A. Como podemos ver en la imagen \ref{fig:i7}.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/i7.PNG}
-	\caption{selección insumo\protect\footnotemark.}
+	\caption{Selección insumo\protect\footnotemark.}
 	\label{fig:i7}
 \end{figure}
 
-El operador deberá localizar las bolsas de este producto y leerá con el Hololens el código QR de la misma. En ese momento el conjunto de datos se actualizara como vemos en la imagen \ref{fig:i8}:
+El operador deberá localizar las bolsas de éste producto y leerá con el Hololens 2 el código QR de la misma. En ese momento el conjunto de datos se actualizará como vemos en la imagen \ref{fig:i8}.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/i8.PNG}
-	\caption{insumo correcto\protect\footnotemark.}
+	\caption{Insumo correcto\protect\footnotemark.}
 	\label{fig:i8}
 \end{figure}
 
-Si el producto es correcto se mostrara un tilde verde, de lo contrario se mostrara una cruz roja como en la figura \ref{fig:i3}. El operador pulsara ``Agregado'' y luego deberá verter las cantidades indicadas del producto en el tanque de producción. En el centro izquierdo de la imagen, podemos ver los datos que hacen referencia al aditivo que se usara en la receta. Como se muestra en la imagen \ref{fig:i9}:
+Si el producto es correcto se mostrará un tilde verde, de lo contrario se mostrará una cruz roja como en la figura \ref{fig:i3}. El operador pulsara ``Agregado'' y luego deberá verter las cantidades indicadas del producto en el tanque de producción. En el centro izquierdo de la imagen, podemos ver los datos que hacen referencia al aditivo que se usará en la receta. Como se muestra en la imagen \ref{fig:i9}.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/i9.PNG}
-	\caption{selección de producto\protect\footnotemark.}
+	\caption{Producto elegido\protect\footnotemark.}
 	\label{fig:i9}
 \end{figure}
 
@@ -134,51 +134,51 @@ Si el producto es correcto se mostrara un tilde verde, de lo contrario se mostra
 Se muestran los siguientes datos:
 
 \begin{itemize}
-\item QR: código QR leído por el hololens.
+\item QR: código QR leído por el Hololens 2.
 \item Código: código del producto leído .
 \item Producto: nombre del producto leído. 
 \item Cantidad: cantidad necesaria del producto en la receta.
 \end{itemize}
 
-Luego el operador pulsara ``Siguiente'' y se actualizara la información con una nueva instrucción como vemos en la imagen \ref{fig:i11}:
+Luego el operador pulsara ``Siguiente'' y se actualizará la información con una nueva instrucción como vemos en la imagen \ref{fig:i11}.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/i11.PNG}
-	\caption{selección de producto\protect\footnotemark.}
+	\caption{Selección de producto\protect\footnotemark.}
 	\label{fig:i11}
 \end{figure}
 
-El procedimiento se repetirá para el total de las tareas de la receta y a medida que las tareas se completen se pintaran de color verde. Luego de la ultima operación, se mostrara la leyenda ``Procedimiento terminado 3/3''. Como se muestra en la imagen \ref{fig:i18} indicándole al operador que puede cerrar la aplicación:
+El procedimiento se repetirá para el total de las tareas de la receta y a medida que las tareas se completen se pintaran de color verde. Luego de la última operación, se mostrará la leyenda ``Procedimiento terminado 3/3''. Como se muestra en la imagen \ref{fig:i18} indicándole al operador que puede cerrar la aplicación.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/i18.PNG}
-	\caption{fin de la aplicación\protect\footnotemark.}
+	\caption{Fin de la aplicación\protect\footnotemark.}
 	\label{fig:i18}
 \end{figure} 
 
 \vspace{60px}
-Los comandos al sistema de control son enviados luego de que el producto correcto fue leído y el operador avanza al siguiente paso de la receta, garantizando que se cumplió la tarea asignada. Si el producto erróneo es leído, el operador no tiene habilitado el paso siguiente, por lo tanto queda retenido en esa etapa. Ademas, las recetas validas son solo aquellas en las que el sistema de control aguarda operaciones manuales, de esta manera nos aseguramos que no puedan mezclarse otras recetas con la receta activa.
+Los comandos al sistema de control son enviados luego de que el producto correcto fue leído y el operador avanza al siguiente paso de la receta, garantizando que se cumplió la tarea asignada. Si el producto erróneo es leído, el operador no tiene habilitado el paso siguiente, por lo tanto queda retenido en esa etapa. Además, las recetas válidas son sólo aquellas en las que el sistema de control aguarda operaciones manuales, de esta manera nos aseguramos que no puedan mezclarse otras recetas con la receta activa.
 
 \subsubsection{API y base de datos}
 La API (\textit{Application Programming Interface}) fue desarrollada en .NET y se implementaron las siguientes operaciones:
 
 \begin{itemize}
 \item GET: devuelve los datos de una receta.
-\item POST: permite crear nueva recetas.
+\item POST: permite crear nuevas recetas.
 \item PATCH: permite actualizar ciertos campos de la receta sin alterar el resto.
 \item DELETE: elimina recetas de la colección.
 \end{itemize}
 
-Se creo una clase ``Receta'' la cual contiene los siguientes parámetros:
+Se creó una clase ``Receta'' la cual contiene los siguientes parámetros:
 
 \begin{itemize}
-\item id: numero de identificación de la receta.
+\item id: número de identificación de la receta.
 \item Receta: producto a fabricar.
-\item Descripcion: descripción del producto.
+\item Descripción: descripción del producto.
 \item Status: running o stop, indica el estado de la receta.
-\item Waitinput: solo si esta en 1 la receta aguarda input del operador.
+\item Waitinput: sólo si esta en 1 la receta aguarda input del operador.
 \item ValidationS1: 1 o 0 dependiendo si se cumplió la etapa del procedimiento.
 \item ValidationS2: 1 o 0 dependiendo si se cumplió la etapa del procedimiento.
 \item ValidationS3: 1 o 0 dependiendo si se cumplió la etapa del procedimiento.
@@ -191,62 +191,62 @@ Se creo una clase ``Receta'' la cual contiene los siguientes parámetros:
 \item CantidadP1: Cantidad del producto de la etapa 1.
 \item CantidadP2: Cantidad del producto de la etapa 2.
 \item CantidadP3: Cantidad del producto de la etapa 3.
-\item Msg1: Mensaje para el etapa 1.
-\item Msg2: Mensaje para el etapa 2.
-\item Msg3: Mensaje para el etapa 3.
+\item Msg1: Mensaje para la etapa 1.
+\item Msg2: Mensaje para la etapa 2.
+\item Msg3: Mensaje para la etapa 3.
 \item MsgEnd: Mensaje de fin de proceso.
 \end{itemize}
 
-Esta clase también se implemento en la lógica del Hololens. De esta manera, se utilizan los metodos GET y PATCH durante los pasos de la interfaz para adquirir o enviar datos a la API. Cuando desde la interfaz leemos un código QR, internamente estamos enviando una petición GET al servidor web, para traer los datos de la receta y almacenarlos en una instancia de la clase Receta. Si la receta es correcta, utilizaremos el mismo ID de receta, para enviar las actualizaciones de estado cuando el operador avance una etapa. Esta actualización se hace con el verbo PATCH. Este se implemento para modificar solo los parámetros del input de usuario en la receta y no alterar el resto. 
+Esta clase también se implementó en la lógica del Hololens 2. De esta manera, se utilizan los métodos GET y PATCH durante los pasos de la interfaz para adquirir o enviar datos a la API. Cuando desde la interfaz leemos un código QR, internamente estamos enviando una petición GET al servidor web, para traer los datos de la receta y almacenarlos en una instancia de la clase Receta. Si la receta es correcta, utilizaremos el mismo ID de receta, para enviar las actualizaciones de estado cuando el operador avance una etapa. Esta actualización se hace con el verbo PATCH. Éste se implementó para modificar sólo los parámetros del input de usuario en la receta y no alterar el resto. 
 
-La API se hosteo en Azure, la plataforma \textit{cloud} de Microsoft. Se utilizo el servicio Azure Web Apps, que es una plataforma que permite publicar aplicaciones web que se ejecutan en múltiples \textit{frameworks} y escritas en diferentes lenguajes de programación. Esto permitió aumentar la velocidad de desarrollo de la aplicación dado que la sincronización y el \textit{deployment} son prácticamente instantáneos. Ademas, ofrece múltiples posibilidades de integración con otros servicios a futuro.
+La API se hosteo en Azure, la plataforma \textit{cloud} de Microsoft. Se utilizó el servicio Azure Web Apps, que es una plataforma que permite publicar aplicaciones web que se ejecutan en múltiples \textit{frameworks} y escritas en diferentes lenguajes de programación. Esto permitió aumentar la velocidad de desarrollo de la aplicación dado que la sincronización y el \textit{deployment} son prácticamente instantáneos. Además, ofrece múltiples posibilidades de integración con otros servicios a futuro.
 
-El motor de la base de datos utilizado es MongoDB. Es una base de datos NoSQL basada en documentos. Se opto por esta tecnología dado que los parámetros de las recetas podían ser encapsulados en un JSON . Se utilizo la plataforma SaaS de MongoDB, Atlas, para poder brindar flexibilidad y escalabilidad a la solución con una base de datos cloud. Para acceder a la misma se debe utilizar una \textit{token} que solo posee la APIrest. 
+El motor de la base de datos utilizado es MongoDB. Es una base de datos NoSQL basada en documentos. Se optó por esta tecnología dado que los parámetros de las recetas podían ser encapsulados en un JSON . Se utilizó la plataforma SaaS de MongoDB, Atlas, para poder brindar flexibilidad y escalabilidad a la solución con una base de datos cloud. Para acceder a la misma se debe utilizar una \textit{token} que sólo posee la APIrest. 
 
 \subsection{Sistema de control}
 \subsubsection{Nodo 800xA}
-Para el sistema de control se utilizo la herramienta de ABB denominada \textit{SoftController}. Esta nos permite simular la presencia de un controlador físico conectado a la red, con la IP del localhost. Para la lógica de control se uso el CBM (\textit{Compact Control Builder}) , que nos permite crear lógicas del mismo tipo que las usadas en los sistemas DCS 800xA de ABB. De hecho las mismas podrían exportarse al sistema 800xA sin problemas. A continuación podemos ver la imagen \ref{fig:c1} del \textit{SoftController} simulando un controlador:
+Para el sistema de control se utilizó la herramienta de ABB denominada \textit{SoftController}. Esta nos permite simular la presencia de un controlador físico conectado a la red, con la IP del localhost. Para la lógica de control se usó el CBM (\textit{Compact Control Builder}) , que nos permite crear lógicas del mismo tipo que las usadas en los sistemas DCS 800xA de ABB. De hecho las mismas podrían exportarse al sistema 800xA sin problemas. A continuación podemos ver la imagen \ref{fig:c1} del \textit{SoftController} simulando un controlador.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.6]{./Figures/c1.png}
-	\caption{controlador simulado\protect\footnotemark.}
+	\caption{Controlador simulado\protect\footnotemark.}
 	\label{fig:c1}
 \end{figure}
 
-En el CBM podemos ver los bloques de las distintas recetas en la aplicación de control, como se muestra en la imagen \ref{fig:c7}:
+En el CBM podemos ver los bloques de las distintas recetas en la aplicación de control, como se muestra en la imagen \ref{fig:c7}.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.5]{./Figures/c7.png}
-	\caption{bloque receta\protect\footnotemark.}
+	\includegraphics[scale=.6]{./Figures/c7.png}
+	\caption{Bloque receta\protect\footnotemark.}
 	\label{fig:c7}
 \end{figure}
 
-A medida que nuevas recetas sean necesarias, estos bloques funcionan como objetos de una clase que pueden instanciarse para cada tipo de receta. Simultáneamente estas recetas se cargan en la base de datos para establecer la comunicación entre el sistema de control y la interfaz del Hololens. Dentro de la receta podemos ver una lógica secuencial del procedimiento, que ira avanzando a medida que el operador complete los pasos en la interfaz holográfica. Podemos ver en la imagen \ref{fig:c123} el avance de la secuencia en el tiempo:
+A medida que nuevas recetas sean necesarias, estos bloques funcionan como objetos de una clase que pueden instanciarse para cada tipo de receta. Simultáneamente estas recetas se cargan en la base de datos para establecer la comunicación entre el sistema de control y la interfaz del Hololens 2. Dentro de la receta podemos ver una lógica secuencial del procedimiento, que irá avanzando a medida que el operador complete los pasos en la interfaz holográfica. Podemos ver en la imagen \ref{fig:c123} el avance de la secuencia en el tiempo.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.4]{./Figures/c123.png}
-	\caption{secuencia\protect\footnotemark.}
+	\includegraphics[scale=.5]{./Figures/c123.png}
+	\caption{Secuencia\protect\footnotemark.}
 	\label{fig:c123}
 \end{figure}
 
-Por ultimo tenemos el OPC server. Esta aplicación crea un OPC server con acceso a las variables del sistema de control. Para conectarnos debemos apuntar a la IP del controlador simulado como se muestra en la imagen \ref{fig:c2}:
+Por último tenemos el OPC server. Ésta aplicación crea un OPC server con acceso a las variables del sistema de control. Para conectarnos debemos apuntar a la IP del controlador simulado como se muestra en la imagen \ref{fig:c2}.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[scale=.5]{./Figures/c2.png}
-	\caption{secuencia\protect\footnotemark.}
+	\caption{OPC server\protect\footnotemark.}
 	\label{fig:c2}
 \end{figure}
 
-Este nodo se implemento en una maquina virtual usando VirtualBox, posee un sistema operativo Windows 10 con 4 gb de memoria RAM y 60 Gb de disco. La ventaja radica en la portabilidad del nodo, dado que podría integrarse a un servidor ESXI en cualquier entorno industrial. 
+Éste nodo se implementó en una máquina virtual usando VirtualBox, posee un sistema operativo Windows 10 con 4 gb de memoria RAM y 60 Gb de disco. La ventaja radica en la portabilidad del nodo, dado que podría integrarse a un servidor ESXI en cualquier entorno industrial. 
 
 \subsubsection{Servicio de actualización}
 
-El servicio se instalo en el mismo nodo virtualizado 800xA visto anteriormente. Se encarga de actualizar la base de datos según los cambios en el sistema de control. Y viceversa, también es capaz de actualizar las variables de control de acuerdo a la base de datos. Se desarrollo en .NET y se ejecuta  como un servicio mas de Windows. El servicio incluye el \textit{framework} OPC mencionado en el Capitulo 2, lo que le permite leer y escribir variables OPC. A continuación podemos un extracto de código de la implementación de la interfaz OPC:
-\begin{lstlisting}[label=cod:vControl,caption=Implementacion de la interfaz OPC]  % Start your code-block
+El servicio se instaló en el mismo nodo virtualizado 800xA visto anteriormente. Se encarga de actualizar la base de datos según los cambios en el sistema de control. Y viceversa, también es capaz de actualizar las variables de control de acuerdo a la base de datos. Se desarrolló en .NET y se ejecuta  como un servicio más de Windows. El servicio incluye el \textit{framework} OPC mencionado en el Capítulo 2, lo que le permite leer y escribir variables OPC. A continuación podemos un extracto de código de la implementación de la interfaz OPC:
+\begin{lstlisting}[label=cod:vControl,caption=Implementación de la interfaz OPC]  % Start your code-block
 
 
 public interface IOpcClient : IDisposable
@@ -268,7 +268,7 @@ public interface IOpcClient : IDisposable
 
 Podemos ver las funciones principales para leer y escribir, datos booleanos, strings y enteros del servidor OPC del sistema de control.
 
-Una vez que el servicio se encuentra corriendo se encarga de realizar consultas GET a la APIrest de cada una de las recetas en ejecución. De esta manera es capaz de detectar que los insumos ya fueron vertidos en el tanque y avanzar así a la siguiente etapa. Ademas, se encarga de setear la variable ``waitinput'', la misma es clave en el funcionamiento de la aplicación dado que indica que la receta se encuentra en ejecución y aguarda ordenes del operador. De esta manera se valida que el operador solo pueda iniciar la aplicación con la receta en ejecución por mas que intente leer otros códigos de receta inválidos. 
+Una vez que el servicio se encuentra corriendo se encarga de realizar consultas GET a la APIrest de cada una de las recetas en ejecución. De ésta manera es capaz de detectar que los insumos ya fueron vertidos en el tanque y avanzar así a la siguiente etapa. Además, se encarga de setear la variable ``waitinput'', la misma es clave en el funcionamiento de la aplicación dado que indica que la receta se encuentra en ejecución y aguarda órdenes del operador. De ésta manera se valida que el operador sólo pueda iniciar la aplicación con la receta en ejecución por más que intente leer otros códigos de receta inválidos. 
 
 
 
