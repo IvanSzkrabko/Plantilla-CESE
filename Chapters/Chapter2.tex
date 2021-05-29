@@ -10,7 +10,7 @@ En este capítulo se presentan las herramientas usadas para desarrollar el traba
 \section{Entorno de desarrollo}
 \subsection{Hololens2}
 
-El equipo que se utilizó para la interfaz de realidad aumentada es el Microsoft Hololens 2. Podemos ver una foto del equipo en la figura \ref{fig:hololens2}:
+El equipo que se utilizó para la interfaz de realidad aumentada es el Microsoft Hololens 2 \citep{HL} que se ilustra en la figura \ref{fig:hololens2}:
 
 \begin{figure}[htpb]
 	\centering
@@ -21,8 +21,9 @@ El equipo que se utilizó para la interfaz de realidad aumentada es el Microsoft
 
 \footnotetext{Imagen tomada de \url{https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/}}
 
+Fue lanzado al mercado para uso corporativo y no para el publico en general. Microsoft apuesta a que la tecnología sea usada con fines productivos en distintas industrias. Es un equipo de última generación que funciona con un sistema operativo Windows 10 core.  La tabla \ref{tab:holotab}, muestra sus especificaciones técnicas.
 
-Fue lanzado al mercado para uso corporativo, Microsoft apuesta a que la tecnología sea usada con fines productivos en distintas industrias. Es un equipo de última generación que funciona con un sistema operativo Windows 10 core.  La tabla \ref{tab:holotab}, muestra sus especificaciones técnicas.
+Lo innovador de su diseño es que utiliza microespejos para proyectar tres haces de luz láser de color rojo, verde y azul. Con un microespejo por cada ojo oscilando a 12.000 veces por segundo compone la imagen horizontal. Con un segundo microespejo que oscila 120 veces por segundo forma la componente vertical. Luego el haz de luz es proyectado hacia la retina del usuario, utilizando el visor del Hololens 2 que actúa como una guía de onda. 
 
 \begin{table}[htpb]
 	\centering
@@ -48,21 +49,20 @@ Fue lanzado al mercado para uso corporativo, Microsoft apuesta a que la tecnolog
 	\label{tab:holotab}
 \end{table}
 
-Lo innovador de su diseño es que utiliza micro espejos para proyectar tres haces de luz láser de color rojo, verde y azul. Con un micro espejo por cada ojo oscilando a 12.000 veces por segundo, compone la imagen horizontal. Con un segundo micro espejo, oscilando a 120 veces por segundo forma la componente vertical. Luego,este haz de luz es proyectado hacia nuestra retina, utilizando el visor del Hololens 2 que actúa como una guía de onda. En la figura \ref{fig:Lasers} podemos ver una ejemplificación del funcionamiento interno:
+En la figura \ref{fig:Lasers} se puede ver una ejemplificación del funcionamiento interno.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=\textwidth]{./Figures/Lasers.png}
-	\caption{Micro espejos\protect\footnotemark.}
+	\caption{Microespejos\protect\footnotemark.}
 	\label{fig:Lasers}
 \end{figure}
 
 \footnotetext{Imagen tomada de \url{https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/}}
 
-
 \subsection{MRTK}
 
-MRTK (\textit{Mixed Reality Toolkit}) para Unity es un kit de desarrollo multiplataforma de código abierto para aplicaciones de realidad mixta. Proporciona un sistema de entrada, componentes fundamentales y bloques de construcción comunes para interacciones espaciales. Tiene como objetivo acelerar el desarrollo de aplicaciones para Microsoft HoloLens 2, los visores inmersivos de Windows Mixed Reality y la plataforma OpenVR. El proyecto busca reducir las barreras de entrada, crear aplicaciones de realidad mixta y contribuir a la comunidad. El \textit{framework} puede desglosarse conceptualmente como se muestra en la \ref{fig:mrtk}:
+MRTK (\textit{Mixed Reality Toolkit}) para Unity es un kit de desarrollo multiplataforma de código abierto para aplicaciones de realidad mixta \citep{MRTK}. Proporciona un sistema de entrada, componentes fundamentales y bloques de construcción comunes para interacciones espaciales. Tiene como objetivo acelerar el desarrollo de aplicaciones para Microsoft HoloLens 2, los visores inmersivos de Windows Mixed Reality y la plataforma OpenVR. El proyecto busca reducir las barreras de entrada, crear aplicaciones de realidad mixta y contribuir a la comunidad. El \textit{framework} puede desglosarse conceptualmente como se muestra en la \ref{fig:mrtk}.
 
 \begin{figure}[htpb]
 	\centering
@@ -73,7 +73,7 @@ MRTK (\textit{Mixed Reality Toolkit}) para Unity es un kit de desarrollo multipl
 
 \footnotetext{Imagen tomada de \url{https://docs.microsoft.com/en-us/windows/mixed-reality/}}
 
-Sus componentes principales son:
+Los componentes principales del MRTK son:
 \begin{itemize}
 \item \textit{Hands}: clase básica de soporte con servicios para seguimiento de las manos.
 \item \textit{ObjectMeshObserver}: procesamiento del ambiente usando el modelado 3D.
@@ -83,39 +83,40 @@ Sus componentes principales son:
 \item \textit{StandardAssets}: renderizado estándar, materiales básicos y otros activos para experiencias de realidad mixta.
 \end{itemize}
 
-Además del MRTK, se utilizan programas de diseño como el Fusion360 para crear objetos 3D. Se utiliza el Visual Studio como IDE de desarrollo y como herramienta de compilación. Y finalmente Unity, como herramienta de diseño visual de la aplicación. En la figura \ref{fig:workflow}, podemos ver un diagrama del entorno completo:
+Además del MRTK se utilizan programas de diseño como el Fusion 360 \citep{Fusion} para crear objetos 3D. Se utiliza el Visual Studio \citep{VS}  como IDE de desarrollo y como herramienta de compilación. Finalmente se utiliza Unity, como herramienta de diseño visual de la aplicación. En la figura \ref{fig:workflow}, se puede ver un diagrama del entorno completo.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.44]{./Figures/workflow.png}
+	\includegraphics[scale=0.55]{./Figures/workflow.png}
 	\caption{Entorno de desarrollo\protect\footnotemark.}
 	\label{fig:workflow}
 \end{figure}
 
 \vspace{10px}
 
-\footnotetext{Imagen tomada de \url{https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/}}
-
 \subsection{OPC \textit{framework}}
 
-Las especificaciones de OPC \textit{Classic} se basan en la tecnología de Microsoft Windows, utilizando COM / DCOM (\textit{Distributed Component Object Model}) para la comunicación entre componentes de software en una red distribuida cliente-servidor. La especificación original es OPC-DA (\textit{Data Access}), que define una interfaz entre las aplicaciones cliente y servidor para intercambiar datos de proceso y fabricación. Antes de OPC-DA, los productos de distintos proveedores (PLC, HMI) requerían que cualquier dispositivo o aplicación que se conectara a ellos, tuviera un ``controlador personalizado'' que comunicara el dispositivo con equipos de terceros. En la figura \ref{fig:OPCAQ} se muestra una arquitectura típica de control previa a la existencia del \textit{standard} OPC.
+OPC (\textit{Open Platform Communications}) es el estándar de interoperabilidad para el intercambio seguro y confiable de datos en la industria \citep{OPC}. Tiene especial uso en los DCS, dado que son sistemas compuestos por productos de distintos rubros y fabricantes. El protocolo es independiente de la plataforma y garantiza el flujo continuo de información entre dispositivos de múltiples proveedores. La Fundación OPC es responsable del desarrollo y mantenimiento de este estándar. Estas especificaciones definen el acceso a datos en tiempo real, monitoreo de alarmas y eventos, acceso a datos históricos y otras aplicaciones.\\
+
+Las especificaciones de OPC \textit{Classic}  se basan en la tecnología de Microsoft Windows, utilizando COM / DCOM (\textit{Distributed Component Object Model}) para la comunicación entre componentes de software en una red distribuida cliente-servidor \citep{OPCclassic}. La especificación original es OPC-DA (\textit{Data Access}), que define una interfaz entre las aplicaciones cliente y servidor para intercambiar datos de proceso y fabricación. Antes de la creación de OPC los productos de distintos proveedores (PLC, HMI) requerían que cualquier dispositivo o aplicación que se conectara a ellos tuviera un ``controlador personalizado'' que comunicara el dispositivo con equipos de terceros. En la figura \ref{fig:OPCAQ} se muestra una arquitectura típica de control previa a la existencia del \textit{standard} OPC.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.7]{./Figures/opc_1.png}
+	\includegraphics[scale=0.6]{./Figures/opc_0.png}
 	\caption{Arquitectura OPC\protect\footnotemark.}
 	\label{fig:OPCAQ}
 \end{figure}
 
 \footnotetext{Imagen tomada de \url{https://technosoftware.com/opc-daaehda-client-net}}
+\vspace{60px}
 
-Hubo muchos problemas asociados con las comunicaciones basadas en controladores personalizados. La tecnología patentada de alto costo que forzaba a los usuarios a mantener un proveedor en particular. Dificultades para configurar y  mantener actualizado los \textit{drivers} debido al lanzamiento de nuevos dispositivos y aplicaciones. OPC-DA hizo posible la conexión a cualquier fuente de datos en tiempo real sin un driver escrito específicamente para el par fuente de datos / receptor de datos. Por lo tanto, las lecturas y escrituras se pueden realizar sin que el receptor de datos tenga que conocer el protocolo nativo de la fuente de datos o la estructura de datos interna.\\ 
+Hubo muchos problemas asociados con las comunicaciones basadas en controladores personalizados. La tecnología patentada de alto costo forzaba a los usuarios a mantener un proveedor en particular. Además había dificultades para configurar y  mantener actualizados los \textit{drivers} debido al lanzamiento de nuevos dispositivos y aplicaciones. OPC-DA hizo posible la conexión a cualquier fuente de datos en tiempo real sin un \textit{driver} escrito específicamente para el par fuente de datos / receptor de datos. Por lo tanto, las lecturas y escrituras se pueden realizar sin que el receptor de datos tenga que conocer el protocolo nativo de la fuente de datos o la estructura de datos interna.
 
-La especificación describe los objetos y sus interfaces, las cuales son implementadas por los servidores OPC. Aunque OPC está diseñado principalmente para acceder a datos desde un servidor en red, las interfaces se pueden utilizar en muchos lugares dentro de una aplicación. En el nivel más bajo, pueden obtener datos sin procesar de los dispositivos físicos y enviarlos a un SCADA o DCS, o desde el sistema SCADA o DCS a la aplicación. La arquitectura y el diseño permiten que una aplicación cliente acceda a datos de muchos servidores OPC proporcionados por distintos proveedores. En la figura \ref{fig:OPCbloques} se muestra un diagrama en bloques para ejemplificar lo explicado:
+La especificación OPC describe los objetos y sus interfaces, las cuales son implementadas por los servidores OPC. Aunque OPC está diseñado principalmente para acceder a datos desde un servidor en red, las interfaces se pueden utilizar en muchos lugares dentro de una aplicación. En el nivel más bajo, pueden obtener datos sin procesar de los dispositivos físicos y enviarlos a un SCADA o DCS, o desde el sistema SCADA o DCS a la aplicación. La arquitectura y el diseño permiten que una aplicación cliente acceda a datos de muchos servidores OPC proporcionados por distintos proveedores. En la figura \ref{fig:OPCbloques} se muestra un diagrama en bloques para ejemplificar lo explicado.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.5]{./Figures/opc_2.png}
+	\includegraphics[scale=0.45]{./Figures/opc_2.png}
 	\caption{Diagrama en bloques\protect\footnotemark.}
 	\label{fig:OPCbloques}
 \end{figure}
@@ -126,12 +127,14 @@ A alto nivel, un servidor OPC se compone de varios objetos: el servidor, el grup
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.4]{./Figures/opc_3.png}
+	\includegraphics[scale=0.5]{./Figures/opc_3.png}
 	\caption{Objeto OPC\protect\footnotemark.}
 	\label{fig:OPCapi}
 \end{figure}
 
 \footnotetext{Imagen tomada de \url{https://opcfoundation.org}}
+
+A continuación se describen brevemente las interfaces del objeto OPC:
 
 \begin{itemize}
 \item IOPC Server: ésta es la interfaz principal de un servidor OPC, permite realizar las consultas a los grupos de elementos OPC.
@@ -143,7 +146,9 @@ obtener propiedades de los elementos OPC.
 \item IOPC ItemIO: en términos de rendimiento esta interfaz se comportará como si se creara un grupo, se agregaran los elementos OPC, se realizará una sola lectura o escritura y luego se eliminará el grupo. Por lo tanto no es la interfaz recomendada para la mayoría de las aplicaciones.
 \end{itemize}
 
-Los grupos OPC proporcionan una forma para que los clientes organicen los datos. Por ejemplo, el grupo puede representar elementos en una pantalla de operación o variables de un lazo PID. Los datos se pueden leer y escribir. Los elementos OPC representan conexiones a fuentes de datos dentro del servidor. Un elemento OPC, desde la perspectiva de la interfaz, no es accesible como objeto por un cliente OPC. Por lo tanto, no hay una interfaz externa definida para un elemento OPC. Todo el acceso a los elementos OPC se realiza a través de un objeto de grupo que contiene los elementos. Un grupo también proporciona una forma para que el cliente se ``suscriba'' a la lista de elementos para que pueda ser notificado cuando cambien. Este ratio de actualización es un parámetro configurable del servidor.
+Los grupos OPC proporcionan una forma para que los clientes organicen los datos. Por ejemplo, el grupo puede representar elementos en una pantalla de operación o variables de un lazo PID. Los datos se pueden leer y escribir. Los elementos OPC representan conexiones a fuentes de datos dentro del servidor. Un elemento OPC, desde la perspectiva de la interfaz, no es accesible como objeto por un cliente OPC. Por lo tanto, no hay una interfaz externa definida para un elemento OPC. 
+
+Todo el acceso a los elementos OPC se realiza a través de un objeto de grupo que contiene los elementos. Un grupo también proporciona una forma para que el cliente se ``suscriba'' a la lista de elementos para que pueda ser notificado cuando cambien. Este ratio de actualización es un parámetro configurable del servidor.
 
 
 \section{Requerimientos}
@@ -163,7 +168,7 @@ A continuación se listan los requerimientos en base a las distintas etapas del 
 	\end{enumerate}
 \item Requerimientos asociados a la API rest:
 	\begin{enumerate}
-	\item La API no será de acceso público, solo podrá ser consultada por las aplicaciones que poseen un \textit{token} de seguridad.
+	\item La API no será de acceso público, sólo podrá ser consultada por las aplicaciones que poseen un \textit{token} de seguridad.
 	\end{enumerate}
 \item Requerimientos asociados a la interfaz de comunicación con el sistema de control:	
 	\begin{enumerate}	
@@ -172,6 +177,7 @@ A continuación se listan los requerimientos en base a las distintas etapas del 
 	\end{enumerate}
 \end{enumerate}
 
+\pagebreak
 \section{Planificación}
 
 El trabajo fue dividido en tareas y se estimaron los tiempos que debían emplearse para cada una de ellas. A su vez, se analizaron qué tareas debían realizarse primero y cuáles eran sus dependencias. Al momento de organizar las tareas se consideraron 15 horas semanales efectivas de trabajo, obteniendo como resultado la planificación de la figura \ref{figure:gantt}:

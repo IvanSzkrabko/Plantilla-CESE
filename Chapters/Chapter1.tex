@@ -20,12 +20,11 @@
 %\section{Introducción}
 
 %----------------------------------------------------------------------------------------
-En este capítulo se realiza una introducción a la realidad aumentada y los sistemas de control distribuidos. Hacia el final, se explica la motivación, alcance y objetivos del presente trabajo.
+En este capítulo se realiza una introducción a la realidad aumentada y los sistemas de control distribuidos. Además, se explica la motivación, alcance y objetivos del presente trabajo.
 
 \section{Realidad aumentada}
-\subsection{Tecnología}
 
-La digitalización del mundo real tiene distintos niveles. Podemos clasificarla en realidad virtual, realidad aumentada y realidad mixta, como puede verse en la figura \ref{fig:realidades}:
+Las tecnologías que permiten que un usuario visualice parte del mundo real a través de un dispositivo tecnológico se pueden clasificar en realidad virtual, realidad aumentada y realidad mixta. En la figura \ref{fig:realidades} se ilustran cada una de estas tecnologías.
 
 \begin{figure}[htpb]
 	\centering
@@ -38,14 +37,26 @@ La digitalización del mundo real tiene distintos niveles. Podemos clasificarla 
 
 La realidad virtual, consiste en un ambiente completamente digital. Se buscan aislar los sentidos del usuario del mundo real. De esta manera el usuario queda inmerso en otra realidad con la cual puede interactuar. Los dispositivos que permiten esta interacción son los cascos de realidad virtual y sus \textit{joysticks}.
 
-La realidad aumentada es una tecnología que permite conectar los dos mundos, el mundo físico y el mundo digital. Esto se logra superponiendo imágenes sobre la percepción que tenemos del mundo real, mediante el uso de hologramas o incluso con teléfonos celulares. Donde al activar la cámara, nos muestra en la pantalla no solo el ambiente en el que estamos, sino que vemos proyectada información adicional. Ejemplos de esta tecnología, son los populares filtros de Instagram o el juego PokemonGo.
+La realidad aumentada es una tecnología que permite conectar los dos mundos, el mundo físico y el mundo digital. Esto se logra superponiendo imágenes sobre la percepción que el usuario tiene del mundo real, mediante el uso de hologramas o incluso con teléfonos celulares. De esta forma en la pantalla se muestra no sólo el ambiente en el que esta el usuario, sino que además se proyecta información adicional. Ejemplos de esta tecnología son los populares filtros de Instagram o el juego PokemonGo.
 
-Por último, la realidad mixta. Es una mejora de la realidad aumentada. Los elementos no solo son adicionados sobre la percepción visual, sino que interactúan además con el espacio físico. Por ejemplo, si tuviéramos una pelota en una aplicación de realidad mixta, la misma podría rodar cuesta abajo de una escalera.
+Por último, la realidad mixta es una mejora de la realidad aumentada. Los elementos no sólo son adicionados sobre la percepción visual, sino que interactúan además con el espacio físico. Por ejemplo, si tuviéramos una pelota en una aplicación de realidad mixta, la misma podría rodar cuesta abajo de una escalera.
 
+\section{Aplicaciones de realidad aumentada en la industria}
 
-\subsection{Procedimientos \textit{batch}}
+A continuación se presenta un listado de algunos trabajos contemporáneos relacionados con la realidad aumentada y su aplicación en la industria.
 
-Una operación \textit{batch} o por lotes es aquella en la cual las condiciones de operación cambian con el tiempo. Por lo general, se siguen una serie de pasos, el producto se transfiere a la siguiente fase de la operación, y el proceso comienza de nuevo. En la figura \ref{fig:tanks} podemos ver que en un proceso por lotes, solo cuando llegamos a t=4, obtenemos el producto final deseado:
+\subsubsection{\textit{Smart retrofitting in the context of industry 4.0}}
+En este trabajo publicado en Elsevier \citep{MX1}, se utiliza el Hololens 2 para capacitar a los operadores luego de una mejora en una máquina dobladora de caños. El trabajo destaca que la herramienta permite a los operadores adaptarse rápidamente a la máquina, permitiéndoles trabajar de manera segura y guiada.
+
+\subsubsection{\textit{Production workplace enhanced by mixed reality}}
+En este paper presentado en la conferencia \textit{Mensch und Computer} 2020 en Alemania \citep{MX2}, se muestra una aplicación de realidad aumentada para guiar al operador en el ensamblado de un scooter. El trabajo destaca el análisis de la relación costo-beneficio a la hora de armar procedimientos para los operadores. Plantean que deben encararse soluciones de realidad aumentada, donde el beneficio sea considerable, dado que estas aplicaciones requieren un elevado tiempo de desarrollo.
+
+\subsubsection{\textit{Mixed reality technology for onsite construction assembly}}
+En este paper presentado en la conferencia \textit{Materials Science, Engineering and Chemistry} 2020 \citep{MX3}, se presenta una aplicación de realidad aumentada cuyo objetivo es comunicar los detalles de diseño para el montaje y la construcción. El trabajo destaca que el Hololens 2 es capaz de guiar la instalación de componentes eléctricos y de plomería, logrando un 9\% de mejora en la productividad. Menciona además, que las imágenes ocluidas en condiciones de luz solar, son el desafío a superar por el HoloLens 2 antes de una adopción generalizada.
+
+\section{Procedimientos \textit{batch}}
+
+Un procedimiento \textit{batch} o por lotes es aquel donde el producto sufre modificaciones consecutivas con el correr del tiempo\citep{Batch:1}. El producto avanza por distintas etapas hasta estar terminado. En ese momento se evacua el producto de la instalación, se carga producto base y el ciclo comienza nuevamente. En la figura \ref{fig:tanks} se puede ver que en el proceso por lotes, sólo cuando se llega a t=4 se obtiene el producto final deseado. Mientras que en el proceso continuo, el tanque contiene producto terminado desde el momento inicial t=0.
 
 \begin{figure}[htpb]
 	\centering
@@ -54,13 +65,13 @@ Una operación \textit{batch} o por lotes es aquella en la cual las condiciones 
 	\label{fig:tanks}
 \end{figure}
 
-Los procedimientos operativos para los procesos por lotes son generalmente más complicados y difíciles de escribir que para las instalaciones de estado estacionario porque el tiempo es un factor. Además, muchas instalaciones están diseñadas para fabricar varios productos a partir de los mismos equipamientos en diferentes momentos. Por lo tanto, se necesitan dos o más procedimientos para los mismos equipos de la planta, creando la posibilidad de confusiones y malentendidos.\\
+Algunas operaciones por lotes implican el uso de hojas de cálculo. Por ejemplo, un operador puede agregar una bolsa de químicos a un reactor y luego agregar un segundo químico. La razón entre el segundo y el primero debe ser exacta. Se necesita entonces una hoja de cálculo para determinar la cantidad requerida del segundo producto. 
 
-Algunas operaciones por lotes implican el uso de hojas de cálculo. Por ejemplo, un operador puede agregar una bolsa de químicos a un reactor y luego agregar un segundo químico. La razón del segundo al primero debe ser exacta. El operador pesará la primera bolsa, calculará el peso del segundo químico necesario y procederá a pesar ese químico. Se necesita entonces una hoja de cálculo para determinar los requisitos para el peso del segundo producto.
+Los procedimientos operativos para los procesos por lotes son generalmente más complicados y difíciles de escribir que para las instalaciones de proceso continuo porque el tiempo es un factor. Además, muchas instalaciones están diseñadas para fabricar varios productos partiendo de los mismas maquinas en producción. Por lo tanto, se necesitan dos o más procedimientos para los mismos equipos de la planta, lo que da lugar a confusiones y malentendidos en los operadores.
 
-\subsection{Sistemas de control distribuidos}
+\section{DCS utilizado en el trabajo}
 
-Los sistemas de control distribuidos, también conocidos por sus siglas en inglés DCS. Son sistemas compuestos por sensores, controladores y computadoras que se distribuyen por toda la planta. Cada uno de estos elementos tiene un propósito único, como la adquisición de datos, el control de procesos, el almacenamiento de datos o la visualización gráfica. Estos elementos individuales se comunican con un sistema centralizado a través de la red de área local de la planta, denominada red de control. A continuación se muestra en la figura \ref{fig:800xA}, la arquitectura de red del sistema DCS de ABB, usado en este trabajo:
+Los sistemas de control distribuidos, también conocidos por sus siglas en inglés DCS \citep{DCS}, son sistemas compuestos por sensores, controladores y computadoras que se distribuyen por toda la planta. Cada uno de estos elementos tiene un propósito único, como la adquisición de datos, el control de procesos, el almacenamiento de datos o la visualización gráfica. Estos elementos individuales se comunican con un sistema centralizado a través de la red de área local de la planta, denominada red de control. En la figura \ref{fig:800xA}, la arquitectura de red del sistema DCS de ABB \citep{DCSaq}, usado en este trabajo.
 
 \begin{figure}[htpb]
 	\centering
@@ -70,26 +81,29 @@ Los sistemas de control distribuidos, también conocidos por sus siglas en ingl�
 \end{figure}
 
 \footnotetext{Imagen tomada de \url{https://new.abb.com/control-systems/system-800xa/800xa-dcs/system/architecture}}
+\vspace{70px}
 
-El DCS toma decisiones automatizadas basadas en las tendencias de producción de toda la planta. Como ejemplo, el DCS de una planta de energía, podría aumentar automáticamente la capacidad de generación de vapor de múltiples turbinas, para adecuarse a la demanda cambiante de electricidad. Mientras que un PLC puede ajustar la operación de una sola unidad, el DCS puede realizar ajustes en cada una de las unidades de control que interactúan en una planta.
+El DCS toma decisiones automatizadas basadas en las tendencias de producción de toda la planta. Como ejemplo, el DCS de una planta de energía, podría aumentar automáticamente la capacidad de generación de vapor de múltiples turbinas, para adecuarse a la demanda cambiante de electricidad. Mientras que un PLC puede ajustar la operación de una sola unidad, el DCS puede realizar ajustes en cada una de las unidades de control que interactúan en una planta.\\
 
-\subsection{Protocolo OPC}
+Como sistema de control en este trabajo, se utilizó la herramienta de ABB denominada \textit{SoftController} \citep{softc}. Esta nos permite simular la presencia de un controlador físico conectado a la red, con la IP del localhost. El CBM (\textit{Compact Control Builder}) \citep{cbm}, permite crear lógicas del mismo tipo que las usadas en los sistemas DCS 800xA de ABB. De hecho las mismas podrían exportarse al sistema 800xA sin problemas. A continuación se puede ver la figura \ref{fig:c1} del \textit{SoftController} simulando un controlador.
 
-OPC (\textit{Open Platform Communications}) es el estándar de interoperabilidad para el intercambio seguro y confiable de datos en la industria. Tiene especial uso en los DCS, dado que son sistemas compuestos por productos de distintos rubros y fabricantes. El protocolo es independiente de la plataforma y garantiza el flujo continuo de información entre dispositivos de múltiples proveedores. La Fundación OPC es responsable del desarrollo y mantenimiento de este estándar. Estas especificaciones definen el acceso a datos en tiempo real, monitoreo de alarmas y eventos, acceso a datos históricos y otras aplicaciones. 
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=.6]{./Figures/c1.png}
+	\caption{Controlador simulado\protect\footnotemark.}
+	\label{fig:c1}
+\end{figure}
+
+Por último tenemos el OPC server. Ésta aplicación crea un OPC server para acceder a las variables del sistema de control. Para conectarnos debemos apuntar a la IP del controlador simulado como se muestra en la figura \ref{fig:c2}.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=.5]{./Figures/c2.png}
+	\caption{OPC server\protect\footnotemark.}
+	\label{fig:c2}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
-\subsection{Otros trabajos}
-
-A continuación se presenta un listado de algunos trabajos contemporáneos relacionados con la realidad aumentada y su aplicación en la industria.
-
-\subsubsection{\textit{Smart retrofitting in the context of industry 4.0}}
-En este trabajo publicado en Elsevier (CIRP 88 369–374), se utiliza el Hololens 2 para capacitar a los operadores luego de una mejora en una máquina dobladora de caños. El trabajo destaca que la herramienta permite a los operadores adaptarse rápidamente a la máquina, permitiéndoles trabajar de manera segura y guiada.
-
-\subsubsection{\textit{Production workplace enhanced by mixed reality}}
-En este paper presentado en la conferencia \textit{Mensch und Computer} 2020 en Alemania (muc2020-ws116-005), se muestra una aplicación de realidad aumentada para guiar al operador en el ensamblado de un scooter. El trabajo destaca el análisis de la relación costo-beneficio a la hora de armar procedimientos para los operadores. Plantean que deben encararse soluciones de realidad aumentada, donde el beneficio sea considerable, dado que estas aplicaciones requieren un elevado tiempo de desarrollo.
-
-\subsubsection{\textit{Mixed reality technology for onsite construction assembly}}
-En este paper presentado en la conferencia \textit{Materials Science, Engineering and Chemistry} 2020 (Matec 312,06001), se presenta una aplicación de realidad aumentada cuyo objetivos es comunicar los detalles de diseño para el montaje y la construcción. El trabajo destaca que el Hololens 2 es capaz de guiar la instalación de componentes eléctricos y de plomería, logrando un 9\% de mejora en la productividad. Menciona además, que las imágenes ocluidas en condiciones de luz solar, son el desafío a superar por el HoloLens 2 antes de una adopción generalizada.
 
 \section{Motivación}
 El propósito de este trabajo es innovar en la interacción entre los operadores y los sistema de control distribuidos, para impulsar nuevas soluciones en el área de la automatización industrial. Se busca explorar las oportunidades que ofrece la realidad aumentada para mejorar y optimizar las tareas de los operadores, además de agilizar el entrenamiento de nuevos operarios y mejorar la seguridad para procedimientos bajo situaciones de emergencia.
